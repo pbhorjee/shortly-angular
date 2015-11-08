@@ -14,5 +14,5 @@ angular.module('shortly.links', [])
     };
 
     $scope.getLinks();
-    $scope.name = "LinksController Child View";
+    $scope.name = "LinksController View";
   });

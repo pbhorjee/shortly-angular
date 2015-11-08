@@ -1,16 +1,18 @@
 angular.module('shortly.shorten', [])
 
 .controller('ShortenController', function ($scope, $location, Links) {
-  // Your code here
   $scope.link = {};
 
-  $scope.addLink = function(url) {
-    Links.shorten(url)
-      .then(function(linkdata) {
-        $scope.link = linkdata;
+  $scope.addLink = function () {
+    $scope.loading = true;
+
+    Links.addLink($scope.link)
+      .then(function () {
+        $scope.loading = false;
+        $location.path('/');
       })
-      .catch(function(error){
-        console.error(error);
+      .catch(function (error) {
+        console.log(error);
       });
   };
 });

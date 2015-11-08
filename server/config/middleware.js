@@ -1,6 +1,6 @@
 var morgan      = require('morgan'), // used for logging incoming request
-    bodyParser  = require('body-parser'),
-    helpers     = require('./helpers.js'); // our custom middleware
+  bodyParser  = require('body-parser'),
+  helpers     = require('./helpers.js'); // our custom middleware
 
 
 module.exports = function (app, express) {
